@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.btn {
+  @apply px-3 py-2 text-sm font-semibold shadow-sm bg-white text-primaryBlack focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+}
+
+.btn-primary {
+  @apply rounded-md bg-orange-500 text-white hover:bg-orange-600 focus-visible:outline-orange-600
+}
+
+.btn-secondary {
+  @apply bg-white text-primaryBlack border border-primaryBlue
+}
+
+label {
+  @apply cursor-pointer
+}
+
+.bg-color-picker {
+  width: 99% !important;
+  padding: 8px !important;
+
+}
+
+/* Style the navigation bar */
+.fixed-navbar {
+  @apply fixed top-0 left-0 h-12 overflow-hidden z-50 flex justify-between w-full bg-gray-400 overflow-auto
+}
+
+/* Navbar links */
+.fixed-navbar a {
+  @apply p-3 text-white no-underline
+}
+
+/* Navbar links on mouse-over */
+.fixed-navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  @apply text-center bg-red-600
+}
